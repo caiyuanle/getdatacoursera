@@ -1,10 +1,10 @@
 Contents in this file
 =====================
-From this discussion: https://class.coursera.org/getdata-009/forum/thread?thread_id=89, it is clear that the minimum for a codebook for this project is to: 
-1. copy over the feature_info.txt, 
-2. remove all columns that have been removed, 
-3. rename the columns that have been renamed, and 
-4. state the transformation. 
+From this discussion: https://class.coursera.org/getdata-009/forum/thread?thread_id=89, it is clear that the minimum for a codebook for this project is to:   
+1.copy over the feature_info.txt
+2.remove all columns that have been removed
+3.rename the columns that have been renamed 
+4.state the transformation. 
 
 So the contents of this file contain necessary info related to the 4 steps above.
 
@@ -23,63 +23,63 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
+tBodyAcc-XYZ  
+tGravityAcc-XYZ  
+tBodyAccJerk-XYZ  
+tBodyGyro-XYZ  
+tBodyGyroJerk-XYZ  
+tBodyAccMag  
+tGravityAccMag  
+tBodyAccJerkMag  
+tBodyGyroMag  
+tBodyGyroJerkMag  
+fBodyAcc-XYZ  
+fBodyAccJerk-XYZ  
+fBodyGyro-XYZ  
+fBodyAccMag  
+fBodyAccJerkMag  
+fBodyGyroMag  
+fBodyGyroJerkMag  
 
 The set of variables that were estimated from these signals are: 
 
-mean(): Mean value
-std(): Standard deviation
-mad(): Median absolute deviation 
-max(): Largest value in array
-min(): Smallest value in array
-sma(): Signal magnitude area
-energy(): Energy measure. Sum of the squares divided by the number of values. 
-iqr(): Interquartile range 
-entropy(): Signal entropy
-arCoeff(): Autorregresion coefficients with Burg order equal to 4
-correlation(): correlation coefficient between two signals
-maxInds(): index of the frequency component with largest magnitude
-meanFreq(): Weighted average of the frequency components to obtain a mean frequency
-skewness(): skewness of the frequency domain signal 
-kurtosis(): kurtosis of the frequency domain signal 
-bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
-angle(): Angle between to vectors.
+mean(): Mean value  
+std(): Standard deviation  
+mad(): Median absolute deviation   
+max(): Largest value in array  
+min(): Smallest value in array  
+sma(): Signal magnitude area  
+energy(): Energy measure. Sum of the squares divided by the number of values.   
+iqr(): Interquartile range   
+entropy(): Signal entropy  
+arCoeff(): Autorregresion coefficients with Burg order equal to 4  
+correlation(): correlation coefficient between two signals  
+maxInds(): index of the frequency component with largest magnitude  
+meanFreq(): Weighted average of the frequency components to obtain a mean frequency  
+skewness(): skewness of the frequency domain signal  
+kurtosis(): kurtosis of the frequency domain signal  
+bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.  
+angle(): Angle between to vectors.  
 
 Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
 
-gravityMean
-tBodyAccMean
-tBodyAccJerkMean
-tBodyGyroMean
-tBodyGyroJerkMean
+gravityMean  
+tBodyAccMean  
+tBodyAccJerkMean  
+tBodyGyroMean  
+tBodyGyroJerkMean  
 
-The complete list of variables of each feature vector is available in 'features.txt' (561 variables in total)
+The complete list of variables of each feature vector is available in 'features.txt' (**561 variables in total**)
 
 Data tranformation done by run_analysis.R script
 ------------------------------------------------
-The following steps have been take to transform the raw data into the tidy data set "tidydata.txt":
-1. The train data set and test data set are merged together.
-2. The column names of the merge data set are updated to contain "Subject", "Activity", and the 561 feature names in the raw data. The feature names are processed with make.names(NAMES,unique=T) function to make sure they are unique.
-3. The values of the Activity column are replaced from the number indicating the Activity type to the name of the Activity type.
-4. The columns whose names match "mean" or "std" but do not match "meanFreq" or "skewness" or "kurtosis" or "bandsEnergy" or "angle" are extracted.
-5. The extracted columns are summarized with the average of each variable for each activity and each subject.
-6. The summarized data are written to tidydata.txt file.
+The following steps have been take to transform the raw data into the tidy data set "tidydata.txt":  
+1. The train data set and test data set are merged together.  
+2. The column names of the merge data set are updated to contain "Subject", "Activity", and the 561 feature names in the raw data. The feature names are processed with make.names(NAMES,unique=T) function to make sure they are unique.  
+3. The values of the Activity column are replaced from the number indicating the Activity type to the name of the Activity type.  
+4. The columns whose names match "mean" or "std" but do not match "meanFreq" or "skewness" or "kurtosis" or "bandsEnergy" or "angle" are extracted.  
+5. The extracted columns are summarized with the average of each variable for each activity and each subject.  
+6. The summarized data are written to tidydata.txt file.  
 
 Features in the tidy data set "tidydata.txt"
 --------------------------------------------
@@ -93,10 +93,10 @@ There are 68 variables in the tidydata.txt, including 1 Subject variable, 1 Acti
 5 STANDING
 6 LAYING
 * mean and standard deviation related variables have their names changed slightly from the raw data by make.names(NAMES,unique=T) function to guarantee the name uniqueness. 
-** For example, **tBodyAcc-mean()-X** name in the raw data is changed to **tBodyAcc.mean...X**, by replacing **-**,**(**, and **)** with **.**
-** The values of these variables are not changed at all, and their meanings are exactly the same as in the raw data. See the **Feature descriptions from the raw data (copy of features_info.txt)** section in the beginning of this file for their meanings.
+  * For example, **tBodyAcc-mean()-X** name in the raw data is changed to **tBodyAcc.mean...X**, by replacing **-**,**(**, and **)** with **.**
+  * The values of these variables are not changed at all, and their meanings are exactly the same as in the raw data. See the **Feature descriptions from the raw data (copy of features_info.txt)** section in the beginning of this file for their meanings.
 
-**Here is the full list:**
+**Here is the full list:**  
 Subject  
 Activity  
 tBodyAcc.mean...X  

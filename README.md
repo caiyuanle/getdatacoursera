@@ -1,10 +1,10 @@
 What does run_analysis.R script do
 ==================================
-The run_analysis.R script performs the following actions:
-1. Read subject, activity, and feature data from both train set and test set, and merge them together
-2. Read feature name and activity label files, and use those info to update the column names in the merged data set as well as to replace the activity numbers with activity names in the merged data set
-3. Extract columns whose names match "mean" or "std" but do not match "meanFreq" or "skewness" or "kurtosis" or "bandsEnergy" or "angle", and then summarize them with the average of each variable for each activity and each subject.
-4. Write the summarized data to tidydata.txt file (also read it in as the last step to make sure the written data are valid)
+The run_analysis.R script performs the following actions:  
+1. Read subject, activity, and feature data from both train set and test set, and merge them together  
+2. Read feature name and activity label files, and use those info to update the column names in the merged data set as well as to replace the activity numbers with activity names in the merged data set  
+3. Extract columns whose names match "mean" or "std" but do not match "meanFreq" or "skewness" or "kurtosis" or "bandsEnergy" or "angle", and then summarize them with the average of each variable for each activity and each subject  
+4. Write the summarized data to tidydata.txt file (also read it in as the last step to make sure the written data are valid)  
 
 How to run run_analysis.R script with the raw data to generate the tidydata.txt
 ===============================================================================
@@ -22,4 +22,5 @@ Steps
 
 Where is the code book for tidydata.txt
 =======================================
-The code book for tidydata.txt is the CodeBook.md file next to this README.md file. Check that file for details of the variables inside the tidydata.txt.
+The code book for tidydata.txt is the **CodeBook.md** file next to this README.md file. 
+  * Please check that file for details of the variables inside the tidydata.txt.
